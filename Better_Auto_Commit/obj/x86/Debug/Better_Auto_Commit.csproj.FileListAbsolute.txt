@@ -1,0 +1,4 @@
+C:\Users\bsherow\Documents\GitHub\BetterAutoCommit\Better_Auto_Commit\bin\Debug\Better_Auto_Commit.exe
+C:\Users\bsherow\Documents\GitHub\BetterAutoCommit\Better_Auto_Commit\bin\Debug\Better_Auto_Commit.pdb
+C:\Users\bsherow\Documents\GitHub\BetterAutoCommit\Better_Auto_Commit\obj\x86\Debug\Better_Auto_Commit.exe
+C:\Users\bsherow\Documents\GitHub\BetterAutoCommit\Better_Auto_Commit\obj\x86\Debug\Better_Auto_Commit.pdb
