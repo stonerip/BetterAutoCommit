@@ -9,9 +9,11 @@ namespace Better_Auto_Commit
 		{
 			Console.Title = "GitHub Auto Committ";
 			while (true) {
+				DateTime.Now.ToString ("h:mm:ss tt");
 				Github ("add --all .");
-				Github ("commit -m \":floppy_disk: Auto Commit %mydate%_%mytime% :floppy_disk:\"");
+				Github ("commit -m \":floppy_disk: Auto Commit " + DateTime.Now.ToString ("yy-MM-dd h:mm:ss tt") + " :floppy_disk:\"");
 				Github ("push origin master");
+				Console.WriteLine ("Commit Done");
 				System.Threading.Thread.Sleep (150000);
 			}
 		}
