@@ -15,6 +15,7 @@ namespace Better_Auto_Commit
 				Github ("push origin master");
 				Console.WriteLine ("Commit Done");
 				System.Threading.Thread.Sleep (150000);
+				Console.Clear ();
 			}
 		}
 
