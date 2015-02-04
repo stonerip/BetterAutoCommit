@@ -20,7 +20,7 @@ namespace Better_Auto_Commit
 					Console.Clear ();
 				}
 			} else {
-				Console.WriteLine ("Please put me in a base GitHub Directory");
+				Console.WriteLine ("Please put me in the base of a GitHub Directory");
 				Console.ReadLine ();
 			}
 		}
@@ -33,7 +33,6 @@ namespace Better_Auto_Commit
 			process.StartInfo.UseShellExecute = false;
 			process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
 			process.StartInfo.CreateNoWindow = false;
-			//process.StartInfo.FileName = "C:\\Users\\bsherow\\AppData\\Local\\GitHub\\PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad\\bin\\git.exe";
 			process.StartInfo.FileName = "git";
 			process.StartInfo.Arguments = args;
 			process.Start();
