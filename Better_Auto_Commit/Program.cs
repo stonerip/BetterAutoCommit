@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace Better_Auto_Commit
 {
@@ -7,15 +8,20 @@ namespace Better_Auto_Commit
 	{
 		public static void Main (string[] args)
 		{
-			Console.Title = "GitHub Auto Committ";
-			while (true) {
-				DateTime.Now.ToString ("h:mm:ss tt");
-				Github ("add --all .");
-				Github ("commit -m \":floppy_disk: Auto Commit " + DateTime.Now.ToString ("yy-MM-dd h:mm:ss tt") + " :floppy_disk:\"");
-				Github ("push origin master");
-				Console.WriteLine ("Commit Done");
-				System.Threading.Thread.Sleep (150000);
-				Console.Clear ();
+			if (File.Exists (".gitignore")) {
+				string LastRan = "";
+				Console.Title = "GitHub Auto Committ";
+				while (true) {
+					LastRan = DateTime.Now.ToString ("yy-MM-dd h:mm:ss tt");
+					Github ("add --all .");
+					Github ("commit -m \":floppy_disk: Auto Commit " + LastRan + " :floppy_disk:\"");
+					Github ("push origin master");
+					sleepy (300, LastRan);
+					Console.Clear ();
+				}
+			} else {
+				Console.WriteLine ("Please put me in a base GitHub Directory");
+				Console.ReadLine ();
 			}
 		}
 
@@ -33,6 +39,19 @@ namespace Better_Auto_Commit
 			process.Start();
 			string result = process.StandardOutput.ReadToEnd();
 			Console.WriteLine(result);
+		}
+
+		public static void sleepy(int time, string rantime)
+		{
+			int timeLeft = time;
+				while (timeLeft >= 1)
+				{
+				timeLeft = timeLeft -1;
+				Console.Clear ();
+				Console.WriteLine ("Last Run Time : " + rantime);
+				Console.WriteLine ("Next Commit : " + timeLeft + " Seconds");
+				System.Threading.Thread.Sleep (1000);
+				}
 		}
 	}
 }
